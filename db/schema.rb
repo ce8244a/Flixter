@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20160226143200) do
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image"
   end
 
   add_index "courses", ["user_id"], name: "index_courses_on_user_id", using: :btree
