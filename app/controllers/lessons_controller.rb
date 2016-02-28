@@ -1,4 +1,7 @@
 class LessonsController < ApplicationController
+	before_action :authenticate_user!
+	before_action :require_enrolled_for_current_course, :only => [:show]
+
 	def show
 	end
 
@@ -7,4 +10,11 @@ class LessonsController < ApplicationController
   def current_lesson
     @current_lesson ||= Lesson.find(params[:id])
   end
+
+  def require_enrolled_for_current_course
+    if current_user.enrolled_in?(current_lesson.section.course) != current_user
+			redirect_to :back, :alert => "Please enroll to access this lesson."
+		end
+  end
+ 
 end
