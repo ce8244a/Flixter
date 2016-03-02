@@ -20,20 +20,20 @@ class Instructor::SectionsController < ApplicationController
 
   private
 
+  def require_authorized_for_current_course
+      if current_course.user != current_user
+            render :text => "Unauthorized", :status => :unauthorized
+      end
+  end
+
   def require_authorized_for_current_section
-    if current_secton.course.user != current_user
-      render text: 'Unauthorized', status: :unauthorized
-    end
+      if current_secton.course.user != current_user
+          render :text => 'Unauthorized', :status => :unauthorized
+      end
   end
 
   def current_section
-    @current_lesson ||= Section.find(params[:id])
-  end
-
-  def require_authorized_for_current_course
-    if current_course.user != current_user
-      render text: "Unauthorized", status: :unauthorized
-    end
+    @current_section ||= Section.find(params[:id])
   end
 
   helper_method :current_course
