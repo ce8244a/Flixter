@@ -12,7 +12,7 @@ class LessonsController < ApplicationController
   end
 
   def require_enrolled_for_current_course
-    if current_user.enrolled_in?(current_lesson.section.course) != current_user
+    if ! current_user.enrolled_in?(current_lesson.section.course)
 			redirect_to :back, :alert => "Please enroll to access this lesson."
 		end
   end
