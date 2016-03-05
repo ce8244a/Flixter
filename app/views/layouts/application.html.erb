@@ -85,11 +85,18 @@
         <b>Social</b>
         <br />
         <br />
-        <%= link_to 'http://github.com/ce8244a' do %>
+        <%= link_to 'http://github.com/', target: '_blank' do %>
           <%= image_tag 'github.png', class: 'social-button' %>
         <% end %>
-        <%= image_tag 'facebook.png', class: 'social-button' %>
-        <%= image_tag 'twitter.png', class: 'social-button' %>
+
+        <%= link_to 'http://facebook.com/', target: '_blank' do %>
+          <%= image_tag 'facebook.png', class: 'social-button' %>
+        <% end %>
+
+        <%= link_to 'http://twitter.com/', target: '_blank' do %>
+          <%= image_tag 'twitter.png', class: 'social-button' %>
+        <% end %>
+
       </div>
     </div>
   </div>

@@ -22,7 +22,7 @@
 
 .navbar-inverse a.navbar-brand {
 	font-family: "Helvetica Neue", Helvetica;
-	font-weight: 100;
+	font-weight: 300;
 	color: white;
 }
 
@@ -81,19 +81,20 @@ body {
 .lesson {
   background-color:black;
   margin-top:10px;
-  height: 130px;
+  height: 185px;
+  padding: 5px;
 }
 
 .lesson a {
   color:white;
   font-family: "Helvetica Neue",Helvetica;
-  font-weight:100;
+  font-weight:55;
   font-size: 15px;
 }
 
 .lesson a b {
-  font-weight: 100;
-  font-size:25px;
+  font-weight:200;
+  font-size:20px;
 }
 
 .section {
